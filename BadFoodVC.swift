@@ -64,7 +64,13 @@ class BadFoodVC: UIViewController {
     
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
-        suggestionAlert()
+        if badFoodToShow != "" {
+            suggestionAlert()
+        }
+        else {
+            segueBack()
+        }
+        
     }
     
     func segueBack(){
