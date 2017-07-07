@@ -179,7 +179,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="healthy" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-ra-16h">
-                                <rect key="frame" x="-143" y="-17" width="605" height="704"/>
+                                <rect key="frame" x="-167" y="-17" width="629" height="732"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuh-Ai-taD">
@@ -249,7 +249,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greasy" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Hh-2UP">
-                                <rect key="frame" x="-362" y="-126" width="951" height="864"/>
+                                <rect key="frame" x="-288" y="-99" width="951" height="864"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

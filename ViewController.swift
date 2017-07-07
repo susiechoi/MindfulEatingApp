@@ -74,13 +74,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "goodFoodSegue", sender: self)
     }
     
-    // for use in various mis-typed entries
+    // for use in various un-typed entries
     func untypedAlert(){
         let alert = UIAlertController(title: "Oops!", message: "Please input a food first.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Got it.", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "badFoodSegue" {
             let destination = segue.destination as! BadFoodVC

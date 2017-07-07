@@ -14,6 +14,8 @@ class BadFoodVC: UIViewController {
     var badFoodArray = [String]()
     var badFoodToShow = ""
     var badFoodDefaults = UserDefaults.standard
+    var goodFoodArray = [String]()
+    var randomGoodFood = ""
     
     // retrieve previously-inputed bad foods in array form
     // append newest food input to array if not already contained within
@@ -51,14 +53,26 @@ class BadFoodVC: UIViewController {
         return true
     }
     
+    func suggestionAlert(){
+        goodFoodArray = badFoodDefaults.object(forKey: "savedGoodFoodArray") as? [String] ?? [String]()
+        let randomGoodFoodIndex = Int(arc4random_uniform(UInt32(goodFoodArray.count)))
+        randomGoodFood = goodFoodArray[randomGoodFoodIndex]
+        let suggestion = UIAlertController(title: "Quick tip", message: "We noticed that \(badFoodToShow) made you feel overstuffed and sluggish, but that \(randomGoodFood) made you feel happy & energized. Maybe you can grab some \(randomGoodFood) instead of \(badFoodToShow) next time.", preferredStyle: UIAlertControllerStyle.alert)
+        suggestion.addAction(UIAlertAction(title: "Ok, maybe.", style: UIAlertActionStyle.default, handler: { (action) in self.segueBack() }))
+        self.present(suggestion, animated: true, completion: nil)
+    }
+    
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
+        suggestionAlert()
+    }
+    
+    func segueBack(){
         self.performSegue(withIdentifier: "backToMenu", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
