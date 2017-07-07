@@ -46,14 +46,28 @@ class BadFoodVC: UIViewController {
         let truncFirstItem = firstItem.substring(from: firstTruncIndex)
         badFoodArray[0] = truncFirstItem
         badFoodDefaults.set(badFoodArray, forKey: "savedBadFoodArray")
+        successfulSaveAlert()
     }
     
+    func successfulSaveAlert() {
+        let successfulSave = UIAlertController(title: "Success", message: "Changes saved.", preferredStyle: UIAlertControllerStyle.alert)
+        successfulSave.addAction(UIAlertAction(title: "Return to list", style: UIAlertActionStyle.default, handler:{ (action) in successfulSave.dismiss(animated: true, completion: nil)}))
+        self.present(successfulSave, animated: true, completion: nil)
+    }
+    
+    /*
     func textViewShouldEndEditing(_ badFoodView: UITextView) -> Bool {
         self.view.endEditing(true)
         return true
     }
+    */
     
-    func suggestionAlert(){
+    // dismiss keyboard if elsewhere on view tapped
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func suggestionAlert() {
         goodFoodArray = badFoodDefaults.object(forKey: "savedGoodFoodArray") as? [String] ?? [String]()
         let randomGoodFoodIndex = Int(arc4random_uniform(UInt32(goodFoodArray.count)))
         randomGoodFood = goodFoodArray[randomGoodFoodIndex]

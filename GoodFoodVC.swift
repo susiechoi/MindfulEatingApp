@@ -36,6 +36,11 @@ class GoodFoodVC: UIViewController {
         goodFoodDefaults.set(goodFoodArray, forKey: "savedgoodFoodArray")
     }
     
+    // dismiss keyboard if elsewhere on view tapped
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @IBAction func doneEditing(_ sender: Any) {
         goodFoodView.resignFirstResponder()
         goodFoodArray = goodFoodView.text.components(separatedBy: "\n-")
@@ -44,11 +49,13 @@ class GoodFoodVC: UIViewController {
         let truncFirstItem = firstItem.substring(from: firstTruncIndex)
         goodFoodArray[0] = truncFirstItem
         goodFoodDefaults.set(goodFoodArray, forKey: "savedgoodFoodArray")
+        successfulSaveAlert()
     }
     
-    func textViewShouldEndEditing(_ goodFoodView: UITextView) -> Bool {
-        self.view.endEditing(true)
-        return true
+    func successfulSaveAlert() {
+        let successfulSave = UIAlertController(title: "Success", message: "Changes saved.", preferredStyle: UIAlertControllerStyle.alert)
+        successfulSave.addAction(UIAlertAction(title: "Return to list", style: UIAlertActionStyle.default, handler:{ (action) in successfulSave.dismiss(animated: true, completion: nil)}))
+        self.present(successfulSave, animated: true, completion: nil)
     }
     
     // return to initial view
@@ -58,7 +65,6 @@ class GoodFoodVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

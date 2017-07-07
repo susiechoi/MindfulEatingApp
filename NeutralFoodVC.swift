@@ -36,6 +36,11 @@ class NeutralFoodVC: UIViewController {
         neutralFoodDefaults.set(neutralFoodArray, forKey: "savedneutralFoodArray")
     }
     
+    // dismiss keyboard if elsewhere on view tapped
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @IBAction func doneEditing(_ sender: Any) {
         neutralFoodView.resignFirstResponder()
         neutralFoodArray = neutralFoodView.text.components(separatedBy: "\n-")
@@ -44,11 +49,13 @@ class NeutralFoodVC: UIViewController {
         let truncFirstItem = firstItem.substring(from: firstTruncIndex)
         neutralFoodArray[0] = truncFirstItem
         neutralFoodDefaults.set(neutralFoodArray, forKey: "savedneutralFoodArray")
+        successfulSaveAlert()
     }
     
-    func textViewShouldEndEditing(_ neutralFoodView: UITextView) -> Bool {
-        self.view.endEditing(true)
-        return true
+    func successfulSaveAlert() {
+        let successfulSave = UIAlertController(title: "Success", message: "Changes saved.", preferredStyle: UIAlertControllerStyle.alert)
+        successfulSave.addAction(UIAlertAction(title: "Return to list", style: UIAlertActionStyle.default, handler:{ (action) in successfulSave.dismiss(animated: true, completion: nil)}))
+        self.present(successfulSave, animated: true, completion: nil)
     }
     
     // return to initial view
@@ -58,7 +65,6 @@ class NeutralFoodVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
