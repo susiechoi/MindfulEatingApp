@@ -15,7 +15,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodInputField: UITextField!
 

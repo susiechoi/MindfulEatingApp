@@ -14,7 +14,7 @@ class GoodFoodVC: UIViewController {
     var goodFoodArray = [String]()
     var goodFoodToShow = ""
     var goodFoodDefaults = UserDefaults.standard
-    
+
     // retrieve previously-inputed good foods in array form
     // append newest food input to array if not already contained within
     // write out to goodFoodView

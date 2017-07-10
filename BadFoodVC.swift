@@ -92,7 +92,7 @@ class BadFoodVC: UIViewController {
         goodFoodArray = badFoodDefaults.object(forKey: "savedGoodFoodArray") as? [String] ?? [String]()
         let randomGoodFoodIndex = Int(arc4random_uniform(UInt32(goodFoodArray.count)))
         randomGoodFood = goodFoodArray[randomGoodFoodIndex]
-        let suggestion = UIAlertController(title: "Quick tip", message: "We noticed that \(badFoodToShow) made you feel overstuffed and sluggish, but that \(randomGoodFood) made you feel happy & energized. Maybe you can grab some \(randomGoodFood) instead of \(badFoodToShow) next time.", preferredStyle: UIAlertControllerStyle.alert)
+        let suggestion = UIAlertController(title: "Quick tip", message: "We noticed that \(badFoodToShow) made you feel overstuffed and sluggish, but that \(randomGoodFood) made you feel happy & energized. Try to grab \(randomGoodFood) instead of \(badFoodToShow) next time.", preferredStyle: UIAlertControllerStyle.alert)
         suggestion.addAction(UIAlertAction(title: "Ok, maybe.", style: UIAlertActionStyle.default, handler: { (action) in self.segueBack() }))
         self.present(suggestion, animated: true, completion: nil)
     }
@@ -101,7 +101,7 @@ class BadFoodVC: UIViewController {
     func segueBack(){
         self.performSegue(withIdentifier: "backToMenu", sender: self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
