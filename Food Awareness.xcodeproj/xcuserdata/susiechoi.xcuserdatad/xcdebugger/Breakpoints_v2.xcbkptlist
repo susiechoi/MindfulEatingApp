@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food Awareness/ViewController.swift"
+            timestampString = "520534811.445219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food Awareness/ViewController.swift"
+            timestampString = "520960151.055472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food Awareness/ViewController.swift"
+            timestampString = "520960698.779884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Food Awareness/BadFoodVC.swift"
+            timestampString = "521044571.089108"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_Awareness.BadFoodVC.__deallocating_deinit"
+                  moduleName = "Food Awareness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susiechoi/Desktop/Food%20Awareness/Food%20Awareness/BadFoodVC.swift"
+                  timestampString = "521044714.205327"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_Awareness.BadFoodVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Food_Awareness.BadFoodVC"
+                  moduleName = "Food Awareness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susiechoi/Desktop/Food%20Awareness/Food%20Awareness/BadFoodVC.swift"
+                  timestampString = "521044714.210164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_Awareness.BadFoodVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Food_Awareness.BadFoodVC"
+                  moduleName = "Food Awareness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susiechoi/Desktop/Food%20Awareness/Food%20Awareness/BadFoodVC.swift"
+                  timestampString = "521044714.214638"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_Awareness.BadFoodVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Food_Awareness.BadFoodVC&gt;"
+                  moduleName = "Food Awareness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susiechoi/Desktop/Food%20Awareness/Food%20Awareness/BadFoodVC.swift"
+                  timestampString = "521044714.217516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Food_Awareness.BadFoodVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Food_Awareness.BadFoodVC&gt;"
+                  moduleName = "Food Awareness"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/susiechoi/Desktop/Food%20Awareness/Food%20Awareness/BadFoodVC.swift"
+                  timestampString = "521044714.21912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

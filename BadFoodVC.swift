@@ -20,11 +20,10 @@ class BadFoodVC: UIViewController {
     // retrieve previously-inputed bad foods in array form
     // append newest food input to array if not already contained within
     // write out to badFoodView
-    // re-write defaults to incorporate newest food input
     override func viewDidLoad() {
         super.viewDidLoad()
         badFoodArray = badFoodDefaults.object(forKey: "savedBadFoodArray") as? [String] ?? [String]()
-        if badFoodToShow != ""{
+        if badFoodToShow != "" {
             if !badFoodArray.contains(badFoodToShow){
                 badFoodArray.append(badFoodToShow)
             }
@@ -35,10 +34,50 @@ class BadFoodVC: UIViewController {
                 badFoodView.text.append("\n")
             }
         }
-        badFoodDefaults.set(badFoodArray, forKey: "savedBadFoodArray")
+    }
+    
+    // remove just-added "bad" food
+    // if just viewing, send mistap alert
+    @IBAction func undoAdd(_ sender: Any) {
+        if badFoodToShow != "" {
+            badFoodArray.remove(at: badFoodArray.count-1)
+            badFoodView.text = ""
+            for badFood in badFoodArray {
+                badFoodView.text.append("-\(badFood)")
+                if badFoodArray.index(of: badFood) != badFoodArray.count-1 {
+                    badFoodView.text.append("\n")
+                }
+            }
+        }
+        else {
+            mistappedAlert()
+        }
+    }
+    
+    // alert if user attempts to "undo add" when no food was added to list
+    func mistappedAlert(){
+        let alert = UIAlertController(title: "Oops!", message: "No food was added.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Got it.", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // dismiss keyboard if tapped outside text view
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 
-    @IBAction func doneEditing(_ sender: Any) {
+    @IBAction func backButtonTapped(_ sender: Any) {
+        doneEditing()
+        if badFoodToShow != "" {
+            suggestionAlert()
+        }
+        else {
+            segueBack()
+        }
+    }
+    
+    // re-write defaults to incorporate newest food input and/or list edits
+    func doneEditing() {
         badFoodView.resignFirstResponder()
         badFoodArray = badFoodView.text.components(separatedBy: "\n-")
         let firstItem = badFoodArray[0]
@@ -46,27 +85,9 @@ class BadFoodVC: UIViewController {
         let truncFirstItem = firstItem.substring(from: firstTruncIndex)
         badFoodArray[0] = truncFirstItem
         badFoodDefaults.set(badFoodArray, forKey: "savedBadFoodArray")
-        successfulSaveAlert()
     }
     
-    func successfulSaveAlert() {
-        let successfulSave = UIAlertController(title: "Success", message: "Changes saved.", preferredStyle: UIAlertControllerStyle.alert)
-        successfulSave.addAction(UIAlertAction(title: "Return to list", style: UIAlertActionStyle.default, handler:{ (action) in successfulSave.dismiss(animated: true, completion: nil)}))
-        self.present(successfulSave, animated: true, completion: nil)
-    }
-    
-    /*
-    func textViewShouldEndEditing(_ badFoodView: UITextView) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    */
-    
-    // dismiss keyboard if elsewhere on view tapped
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
+    // suggest a healthier alternative to the inputed "bad" food
     func suggestionAlert() {
         goodFoodArray = badFoodDefaults.object(forKey: "savedGoodFoodArray") as? [String] ?? [String]()
         let randomGoodFoodIndex = Int(arc4random_uniform(UInt32(goodFoodArray.count)))
@@ -77,16 +98,6 @@ class BadFoodVC: UIViewController {
     }
     
     // return to initial view
-    @IBAction func backButtonTapped(_ sender: Any) {
-        if badFoodToShow != "" {
-            suggestionAlert()
-        }
-        else {
-            segueBack()
-        }
-        
-    }
-    
     func segueBack(){
         self.performSegue(withIdentifier: "backToMenu", sender: self)
     }
