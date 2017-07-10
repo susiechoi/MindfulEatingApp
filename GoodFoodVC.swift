@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import EventKit
 
 class GoodFoodVC: UIViewController {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var goodFoodView: UITextView!
     var goodFoodArray = [String]()
     var goodFoodToShow = ""
     var goodFoodDefaults = UserDefaults.standard
-
+    
     // retrieve previously-inputed good foods in array form
     // append newest food input to array if not already contained within
     // write out to goodFoodView
@@ -67,7 +69,12 @@ class GoodFoodVC: UIViewController {
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
         doneEditing()
-        self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+        if goodFoodToShow != "" {
+            reminderOption()
+        }
+        else {
+            self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+        }
     }
     
     func doneEditing() {
@@ -78,6 +85,44 @@ class GoodFoodVC: UIViewController {
         let truncFirstItem = firstItem.substring(from: firstTruncIndex)
         goodFoodArray[0] = truncFirstItem
         goodFoodDefaults.set(goodFoodArray, forKey: "savedgoodFoodArray")
+    }
+    
+    // option of adding just-inputed "good" food to grocery reminders list
+    func reminderOption(){
+        let alert = UIAlertController(title: "Hurray!", message: "Would you like to add \(goodFoodToShow) to your Reminders app so you can pick it up next time you're grocery-shopping?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Sure", style: UIAlertActionStyle.default, handler: { (action) in self.ensureAccessToReminders() }))
+        alert.addAction(UIAlertAction(title: "No, thanks.", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func ensureAccessToReminders() {
+        if appDelegate.eventStore == nil {
+            appDelegate.eventStore = EKEventStore()
+            
+            appDelegate.eventStore?.requestAccess(to: EKEntityType.reminder, completion: { (granted, error) in
+                if !granted {
+                    print("Access not granted")
+                } else {
+                    print("Access granted")
+                }
+            })
+        }
+        if (appDelegate.eventStore != nil) {
+            self.createReminder()
+        }
+    }
+    
+    // add "good" food to reminders list
+    func createReminder() {
+        let reminder = EKReminder(eventStore: appDelegate.eventStore!)
+        reminder.title = goodFoodToShow
+        reminder.calendar = appDelegate.eventStore!.defaultCalendarForNewReminders()
+        do {
+            try appDelegate.eventStore?.save(reminder, commit: true)
+        } catch let error {
+            print("Reminder failed with error \(error.localizedDescription)")
+        }
+        self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //  Guidance for saving user defaults from https://www.hackingwithswift.com/example-code/system/how-to-save-user-settings-using-userdefaults
 //  Guidance for "Return" key-triggered keyboard dismissal from Joey Devilla, see: http://www.globalnerdy.com/2015/05/12/how-to-dismiss-the-ios-keyboard-when-the-user-taps-the-return-key-in-swift/
 //  Guidance for view/any tap-triggered keyboard dismissal from Todd Perkins, see Lynda course "Learning iOS 10 App Development: 1 Create Your First App"
+//  Guidance for creating new reminders in Reminders app from http://www.techotopia.com/index.php/Using_iOS_8_Event_Kit_and_Swift_to_Create_Date_and_Location_Based_Reminders 
 //
 //  Created by Susie Choi on 6/28/17.
 //  Copyright © 2017 Susie Choi. All rights reserved.
