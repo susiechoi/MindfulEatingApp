@@ -66,6 +66,16 @@ class GoodFoodVC: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func shareToFacebook(_ sender: Any) {
+        performSegue(withIdentifier: "shareSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! ShareVC
+        destination.foodToShare = goodFoodToShow
+    }
+    
+    
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
         doneEditing()
@@ -88,7 +98,7 @@ class GoodFoodVC: UIViewController {
     }
     
     // option of adding just-inputed "good" food to grocery reminders list
-    func reminderOption(){
+    func reminderOption() {
         let alert = UIAlertController(title: "Hurray!", message: "Would you like to add \(goodFoodToShow) to your Reminders app so you can pick it up next time you're grocery-shopping?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Sure", style: UIAlertActionStyle.default, handler: { (action) in self.ensureAccessToReminders() }))
         alert.addAction(UIAlertAction(title: "No, thanks.", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
@@ -123,6 +133,10 @@ class GoodFoodVC: UIViewController {
             print("Reminder failed with error \(error.localizedDescription)")
         }
         self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+    }
+    
+    // allow segue back to this VC if user decides not to upload to Facebook
+    @IBAction func backToGoodList(segue: UIStoryboardSegue){
     }
     
     override func didReceiveMemoryWarning() {

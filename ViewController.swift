@@ -8,6 +8,8 @@
 //  Guidance for "Return" key-triggered keyboard dismissal from Joey Devilla, see: http://www.globalnerdy.com/2015/05/12/how-to-dismiss-the-ios-keyboard-when-the-user-taps-the-return-key-in-swift/
 //  Guidance for view/any tap-triggered keyboard dismissal from Todd Perkins, see Lynda course "Learning iOS 10 App Development: 1 Create Your First App"
 //  Guidance for creating new reminders in Reminders app from http://www.techotopia.com/index.php/Using_iOS_8_Event_Kit_and_Swift_to_Create_Date_and_Location_Based_Reminders 
+//  Guidance for UIImagePickerController from http://www.kaleidosblog.com/how-to-upload-images-using-swift-2-send-multipart-post-request 
+//  Guidance for sharing to Facebook from h-shib via https://medium.com/@h_shib8/share-contents-on-facebook-and-twitter-in-swift-3-slcomposeviewcontroller-fb02de241416 
 //
 //  Created by Susie Choi on 6/28/17.
 //  Copyright © 2017 Susie Choi. All rights reserved.
