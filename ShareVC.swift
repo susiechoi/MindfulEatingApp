@@ -12,12 +12,16 @@ import Social
 class ShareVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var foodToShare = ""
-    @IBOutlet weak var foodField: UITextField!
+    @IBOutlet weak var foodTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodField.text = foodToShare
+        foodTextView!.layer.borderWidth = 0.25
+        foodTextView!.layer.borderColor = UIColor.lightGray.cgColor
+        if foodToShare != "" {
+            foodTextView.text = "Just made a delicious and healthy meal: \(foodToShare)!"
+        }
     }
     
     @IBAction func selectImage(_ sender: Any) {
@@ -34,10 +38,11 @@ class ShareVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     
     @IBAction func upload(_ sender: Any) {
         let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-        vc?.add(imageView.image!)
-        vc?.setInitialText("Just made a healthy and delicious meal: \(foodToShare)!")
+        if imageView.image != nil {
+            vc?.add(imageView.image!)
+        }
+        vc?.setInitialText(foodTextView.text)
         self.present(vc!, animated: true, completion: nil)
-        goBackToGoodList()
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -52,7 +57,7 @@ class ShareVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func goBackToGoodList() {
-        foodField.text = "" 
+        foodTextView.text = "" 
         self.performSegue(withIdentifier: "backToGoodList", sender: self)
     }
     

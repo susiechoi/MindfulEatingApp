@@ -71,10 +71,13 @@ class GoodFoodVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ShareVC
-        destination.foodToShare = goodFoodToShow
+        if segue.identifier == "shareSegue" {
+            let destination = segue.destination as! ShareVC
+            if goodFoodToShow != "" {
+                destination.foodToShare = goodFoodToShow
+            }
+        }
     }
-    
     
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -83,7 +86,7 @@ class GoodFoodVC: UIViewController {
             reminderOption()
         }
         else {
-            self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+            segueBack()
         }
     }
     
@@ -97,11 +100,15 @@ class GoodFoodVC: UIViewController {
         goodFoodDefaults.set(goodFoodArray, forKey: "savedgoodFoodArray")
     }
     
+    func segueBack() {
+        self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+    }
+    
     // option of adding just-inputed "good" food to grocery reminders list
     func reminderOption() {
         let alert = UIAlertController(title: "Hurray!", message: "Would you like to add \(goodFoodToShow) to your Reminders app so you can pick it up next time you're grocery-shopping?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Sure", style: UIAlertActionStyle.default, handler: { (action) in self.ensureAccessToReminders() }))
-        alert.addAction(UIAlertAction(title: "No, thanks.", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "No, thanks.", style: UIAlertActionStyle.default, handler: { (action) in self.segueBack() }))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -132,7 +139,7 @@ class GoodFoodVC: UIViewController {
         } catch let error {
             print("Reminder failed with error \(error.localizedDescription)")
         }
-        self.performSegue(withIdentifier: "backToMenuFromGood", sender: self)
+        segueBack()
     }
     
     // allow segue back to this VC if user decides not to upload to Facebook
