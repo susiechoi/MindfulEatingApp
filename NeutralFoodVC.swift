@@ -66,7 +66,9 @@ class NeutralFoodVC: UIViewController {
     
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
-        doneEditing()
+        if neutralFoodView.text != "" {
+            doneEditing()
+        }
         self.performSegue(withIdentifier: "backToMenuFromNeutral", sender: self)
     }
     

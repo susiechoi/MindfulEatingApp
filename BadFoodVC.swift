@@ -67,7 +67,9 @@ class BadFoodVC: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        doneEditing()
+        if badFoodView.text != "" {
+            doneEditing()
+        }
         if badFoodToShow != "" {
             suggestionAlert()
         }

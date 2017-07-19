@@ -94,7 +94,9 @@
                                 <rect key="frame" x="16" y="621" width="102" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="View ☹️"/>
+                                <state key="normal" title="View ☹️">
+                                    <color key="titleColor" red="1" green="0.48567659143795516" blue="0.9339866581919698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="viewBadFood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SxJ-wx-FnE"/>
                                 </connections>
@@ -103,7 +105,9 @@
                                 <rect key="frame" x="136" y="621" width="102" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="View 😐"/>
+                                <state key="normal" title="View 😐">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="viewNeutralFood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1tM-z9-kND"/>
                                 </connections>
@@ -112,7 +116,9 @@
                                 <rect key="frame" x="257" y="621" width="102" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="View 🙂"/>
+                                <state key="normal" title="View 🙂">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="viewGoodFood:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5lu-6b-185"/>
                                 </connections>
@@ -125,19 +131,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="xGy-aH-Sa9">
-                                <rect key="frame" x="-46" y="549" width="485" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ombre" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-dk-2QB">
-                                <rect key="frame" x="0.0" y="-33" width="375" height="758"/>
+                                <rect key="frame" x="-55" y="549" width="485" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.83642520097451745" green="1" blue="0.84168691734697598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="foodInputField" destination="efc-Kl-ngf" id="yi1-9z-bje"/>
-                        <outlet property="imageView" destination="Dhk-dk-2QB" id="AqP-Yy-fLN"/>
                         <segue destination="qig-1L-2dQ" kind="show" identifier="badFoodSegue" id="H4Q-jr-oP2"/>
                         <segue destination="URi-17-Kaj" kind="show" identifier="neutralFoodSegue" id="lFL-wI-EVh"/>
                         <segue destination="xUP-8v-S62" kind="show" identifier="goodFoodSegue" id="HhQ-MR-NFc"/>
@@ -167,7 +168,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HFp-v3-VTx">
-                                <rect key="frame" x="20" y="145" width="334" height="464"/>
+                                <rect key="frame" x="20" y="145" width="339" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -177,7 +178,9 @@
                                 <rect key="frame" x="16" y="20" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="&lt; Back"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="xUP-8v-S62" eventType="touchUpInside" id="d9v-al-lp1"/>
                                 </connections>
@@ -186,7 +189,9 @@
                                 <rect key="frame" x="267" y="20" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Undo Add"/>
+                                <state key="normal" title="Undo Add">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="undoAdd:" destination="xUP-8v-S62" eventType="touchUpInside" id="PlQ-Ze-dP3"/>
                                 </connections>
@@ -199,12 +204,8 @@
                                     <action selector="shareToFacebook:" destination="xUP-8v-S62" eventType="touchUpInside" id="1bk-os-HZP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="healthy" translatesAutoresizingMaskIntoConstraints="NO" id="I1S-ra-16h">
-                                <rect key="frame" x="-203" y="-18" width="625" height="724"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83642520099999995" green="1" blue="0.8416869173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="goodFoodView" destination="HFp-v3-VTx" id="G5M-Rt-joL"/>
@@ -233,7 +234,9 @@
                                 <rect key="frame" x="112" y="250" width="150" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Select an image"/>
+                                <state key="normal" title="Select an image">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="selectImage:" destination="7k5-hj-p3W" eventType="touchUpInside" id="Mps-8o-6tD"/>
                                 </connections>
@@ -254,7 +257,9 @@
                                 <rect key="frame" x="16" y="20" width="77" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="&lt; Back"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="7k5-hj-p3W" eventType="touchUpInside" id="wKg-uF-1fh"/>
                                 </connections>
@@ -273,12 +278,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tabouleh" translatesAutoresizingMaskIntoConstraints="NO" id="ZKR-qi-cBV">
-                                <rect key="frame" x="-180" y="-54" width="636" height="739"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83642520099999995" green="1" blue="0.8416869173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="foodTextView" destination="V81-0f-PsX" id="JBb-OR-Pu8"/>
@@ -321,7 +322,9 @@
                                 <rect key="frame" x="9" y="20" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="&lt; Back"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="qig-1L-2dQ" eventType="touchUpInside" id="Blb-96-2Be"/>
                                 </connections>
@@ -330,17 +333,15 @@
                                 <rect key="frame" x="267" y="20" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Undo Add"/>
+                                <state key="normal" title="Undo Add">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="undoAdd:" destination="qig-1L-2dQ" eventType="touchUpInside" id="eXc-wK-guG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greasy" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Hh-2UP">
-                                <rect key="frame" x="-288" y="-99" width="951" height="864"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83642520099999995" green="1" blue="0.8416869173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="badFoodView" destination="Ubz-et-uUk" id="oxz-uh-NjU"/>
@@ -382,7 +383,9 @@
                                 <rect key="frame" x="16" y="20" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="&lt; Back"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonTapped:" destination="URi-17-Kaj" eventType="touchUpInside" id="5Qa-RX-Ef9"/>
                                 </connections>
@@ -391,17 +394,15 @@
                                 <rect key="frame" x="268" y="20" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Undo Add"/>
+                                <state key="normal" title="Undo Add">
+                                    <color key="titleColor" red="1" green="0.48567659140000002" blue="0.93398665820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="undoAdd:" destination="URi-17-Kaj" eventType="touchUpInside" id="N5l-nm-6no"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="breadrolls" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-Q6-QKs">
-                                <rect key="frame" x="-168" y="-32" width="680" height="731"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83642520099999995" green="1" blue="0.8416869173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="neutralFoodView" destination="72O-2N-1jg" id="ZkD-lU-fd2"/>
@@ -415,12 +416,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="breadrolls" width="600" height="395"/>
         <image name="facebook" width="125" height="125"/>
-        <image name="greasy" width="500" height="300"/>
-        <image name="healthy" width="250" height="201"/>
         <image name="line" width="960" height="260"/>
-        <image name="ombre" width="215" height="430"/>
-        <image name="tabouleh" width="410" height="370"/>
     </resources>
 </document>

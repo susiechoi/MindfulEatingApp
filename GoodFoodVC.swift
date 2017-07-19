@@ -81,7 +81,9 @@ class GoodFoodVC: UIViewController {
     
     // return to initial view
     @IBAction func backButtonTapped(_ sender: Any) {
-        doneEditing()
+        if goodFoodView.text != "" {
+            doneEditing()
+        }
         if goodFoodToShow != "" {
             reminderOption()
         }
